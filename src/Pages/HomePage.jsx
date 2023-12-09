@@ -26,11 +26,11 @@ function HomePage() {
             
           }}
         ></img>
-        <p style={{zIndex:"2",color:"white",position:"absolute", top: "20%",
+        <p style={{zIndex:"2",color:"white",position:"absolute", top: "23%",
             left: "50%",
             transform:"translate(-50%,-50%)"}}>WHERE NATURE MEETS NOURISHMENT.</p>
 
-             <p style={{zIndex:"2",color:"white",position:"absolute", top: "94%",
+             <p style={{zIndex:"2",color:"white",position:"absolute", top: "98%",
             left: "50%",fontSize:"10px",
             transform:"translate(-50%,-50%)"}}> ©-NUTRIHIVE-2023</p>
       </div>
