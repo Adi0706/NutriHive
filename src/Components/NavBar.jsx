@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom';
 import { useState } from 'react';
+import { VscAccount } from "react-icons/vsc";
 function NavBar() {
   
   const [authPopup,setAuthPopUp] = useState(false);
@@ -37,7 +38,7 @@ function NavBar() {
         <ul className='navigation-list'>
 <Link to='/Store' style={{textDecoration:"none"}}><li className='item'>STORE</li></Link>
 <li className='item' onMouseEnter={handlepopup}
- onMouseLeave={handlepopupClose}>LOGIN/REGISTER</li>
+ onMouseLeave={handlepopupClose}>< VscAccount style={{width:"30px",height:"30px"}}/></li>
 
 
         </ul>
