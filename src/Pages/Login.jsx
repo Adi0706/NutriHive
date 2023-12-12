@@ -12,17 +12,18 @@ function Login() {
     height: '70vh',
     width: 400,
     margin: '20px auto',
-    backgroundColor: 'rgba(255, 255, 255, 0.5)',
-    color: 'white',
+    backgroundColor: 'rgba(255, 255, 255, 0.8)',
+    color: 'black',
     borderRadius:"20px"
   };
 
   const avatarStyle = { backgroundColor: '#1bbd7e' };
-  const btnstyle = { margin: '8px 0', color: 'white' }; // Set button text color to white
+  const btnstyle = { margin: '8px 0', color: 'white' }; 
 
   return (
     <>
       <NavBar />
+      
       <div className="overlay"></div>
       <img src={LoginBackground} alt="background-login" className="login-bg" />
 
@@ -34,8 +35,8 @@ function Login() {
               <Avatar style={avatarStyle}><LockOutlinedIcon /></Avatar>
               <h2>Log In</h2>
             </Grid>
-            <TextField label='Username' placeholder='Enter username' variant="outlined" fullWidth required inputProps={{ style: { color: 'white' } }} />
-            <TextField label='Password' placeholder='Enter password' type='password' variant="outlined" fullWidth required inputProps={{ style: { color: 'white' } }} />
+            <TextField label='Username' placeholder='Enter username' variant="outlined" fullWidth required inputProps={{ style: { color: 'black' } }} />
+            <TextField label='Password' placeholder='Enter password' type='password' variant="outlined" fullWidth required inputProps={{ style: { color: 'black' } }} />
             <FormControlLabel
               control={
                 <Checkbox
@@ -44,16 +45,16 @@ function Login() {
                 />
               }
               label="Remember me"
-              style={{ color: 'white' }}
+              style={{ color: 'black' }}
             />
             <Button type='submit' color='primary' variant="contained" style={btnstyle} fullWidth>Sign in</Button>
             <Typography>
-              <Link href="#" style={{ color: 'white' }}>
+              <Link href="#" style={{ color: 'black' }}>
                 Forgot password ?
               </Link>
             </Typography>
-            <Typography style={{ color: 'white' }}> Do you have an account ?
-              <Link href="#" style={{ color: 'white' }}>
+            <Typography style={{ color: 'black' }}> Do you have an account ?
+              <Link href="#" style={{ color: 'black' }}>
                 Sign Up
               </Link>
             </Typography>
