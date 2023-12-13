@@ -74,12 +74,12 @@ const StoreCardData = [
       
       >
 
-        <div className="bg-red-200 shadow-md h-96 flex items-center justify-around">
+        <div className="bg-zinc-50  h-96 flex items-center justify-around">
 
           {StoreCardData.map((item)=>{
 
           return(
-        <Card sx={{ maxWidth: 345,maxHeight:350 }}>
+        <Card sx={{ maxWidth: 345,maxHeight:350,borderRadius:8,boxShadow:10 }}>
       <CardMedia
         sx={{ height: 140 }}
         image="/static/images/cards/contemplative-reptile.jpg"
