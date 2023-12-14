@@ -26,7 +26,7 @@ function Footer() {
             zIndex: "2",
             color: "black",
             position: "absolute",
-            top: "110%",
+            top: "135%",
             left: "50%",
             fontSize: "15px",
             transform: "translate(-50%, -50%)",

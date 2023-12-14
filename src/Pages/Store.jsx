@@ -9,6 +9,9 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import wheyCard from '../Media/wheyCard.png';
+import genSupStore from '../Media/genSupStore.png';
+import ayurvedicSup from '../Media/ayurvedicSup.png';
 function Store() {
 
 
@@ -16,19 +19,22 @@ const StoreCardData = [
   {
     id:"1",
     CardName:"GYM SUPPLEMENT STORE",
-    CardDesc:"",
+    CardImage:wheyCard,
+    CardDesc:"Explore our Gym Supplement Store to discover premium products that can enhance your workout performance at the gym."
     
   },
   {
     id:"2",
     CardName:"GENERAL HEALTH SUPPLEMENT STORE",
-    CardDesc:"",
+    CardImage: genSupStore,
+    CardDesc:"Fulfill your daily nutrition goals with our Health Supplement Store."
     
   },
   {
     id:"3",
     CardName:"AYURVEDIC SUPPLEMENT STORE",
-    CardDesc:"",
+    CardImage:ayurvedicSup,
+    CardDesc:"Discover holistic well-being with our Ayurvedic Supplement Store – where ancient wisdom meets modern vitality."
     
   },
  
@@ -38,7 +44,7 @@ const StoreCardData = [
   return (
     <>
       <div className="relative">
-      <img src={StoreBackground} alt="storebackground" className="w-full h-52 object-cover " />
+      <img src={StoreBackground} alt="storebackground" className="w-full h-96 object-cover " />
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <Link to ='/'> <img
           src={Logo}
@@ -58,7 +64,7 @@ const StoreCardData = [
             zIndex: "2",
             color: "white",
             position: "absolute",
-            top: "53%",
+            top: "43%",
             left: "50%",
             transform: "translate(-50%, -50%)",
             fontSize:"10px"
@@ -82,16 +88,15 @@ const StoreCardData = [
         <Card sx={{ maxWidth: 345,maxHeight:350,borderRadius:8,boxShadow:10 }}>
       <CardMedia
         sx={{ height: 140 }}
-        image="/static/images/cards/contemplative-reptile.jpg"
-        title="green iguana"
+        image={item.CardImage}
+     
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          {item.CardName}
+         <b>{item.CardName}</b> 
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
+    {item.CardDesc}
         </Typography>
       </CardContent>
       <CardActions>
