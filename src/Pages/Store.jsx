@@ -20,21 +20,24 @@ const StoreCardData = [
     id:"1",
     CardName:"GYM SUPPLEMENT STORE",
     CardImage:wheyCard,
-    CardDesc:"Explore our Gym Supplement Store to discover premium products that can enhance your workout performance at the gym."
+    CardDesc:"Explore our Gym Supplement Store to discover premium products that can enhance your workout performance at the gym.",
+    StoreLink:"/GymSupplement"
     
   },
   {
     id:"2",
     CardName:"GENERAL HEALTH SUPPLEMENT STORE",
     CardImage: genSupStore,
-    CardDesc:"Fulfill your daily nutrition goals with our Health Supplement Store."
+    CardDesc:"Fulfill your daily nutrition goals with our Health Supplement Store.",
+    StoreLink:"/HealthSupplement"
     
   },
   {
     id:"3",
     CardName:"AYURVEDIC SUPPLEMENT STORE",
     CardImage:ayurvedicSup,
-    CardDesc:"Discover holistic well-being with our Ayurvedic Supplement Store – where ancient wisdom meets modern vitality."
+    CardDesc:"Discover holistic well-being with our Ayurvedic Supplement Store – where ancient wisdom meets modern vitality.",
+    StoreLink:"/AyurvedSupplement"
     
   },
  
@@ -100,7 +103,7 @@ const StoreCardData = [
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">VISIT STORE </Button>
+       <Link to={item.StoreLink}> <Button size="small">VISIT STORE </Button></Link>
         
       </CardActions>
     </Card>
