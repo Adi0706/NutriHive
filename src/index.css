@@ -84,3 +84,14 @@ body {
   left: 0;
   margin: auto;
 }
+.ProductCard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns with equal width */
+  gap: 20px; /* Adjust the gap between grid items as needed */
+  margin: auto;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align:left;
+}
