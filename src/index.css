@@ -1,14 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 body {
   margin: 0;
-  font-family: 'gilroy',
-    sans-serif;
+  font-family: 'gilroy', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 
 .NavBar {
   position: absolute;
@@ -23,9 +22,10 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);                   
-  z-index: 1; 
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
+
 .navigation-list {
   list-style-type: none;
   gap: 15px;
@@ -72,26 +72,51 @@ body {
   }
 
   .video-container {
-    height: 100vh;
+    height: 50vh; /* Adjusted height for smaller screens */
   }
 }
+
 .login-bg {
   position: absolute;
-  width: 100%; 
-  height: 100%; 
-  object-fit:cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   top: 0;
   left: 0;
   margin: auto;
 }
+
 .ProductCard {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns with equal width */
-  gap: 20px; /* Adjust the gap between grid items as needed */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
   margin: auto;
   position: absolute;
-  top: 70%;
+  top: 30%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  text-align:left;
+  transform: translateX(-50%);
+  text-align: left;
+  padding: 30px;
+  width: 80%;
 }
+
+@media screen and (max-width: 1200px) {
+  .ProductCard {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .ProductCard {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .ProductCard {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    padding: 15px;
+  }
+}
+
