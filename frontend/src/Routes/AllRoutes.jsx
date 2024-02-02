@@ -11,7 +11,8 @@ import Cart from '../Pages/Cart';
 import ForgotPassword from '../Pages/ForgotPassword';
 import LoginHomepage from '../Pages/PostLogin/LoginHomepage';
 import About from '../Pages/About';
-import PaymentPage from '../Pages/PaymentPage';
+import PaymentSuccess from '../Pages/PaymentSuccess';
+
 function AllRoutes() {
     return (
       <>
@@ -27,7 +28,9 @@ function AllRoutes() {
       <Route path='/Cart' element={<Cart/>}></Route>
       <Route path='/LoginHomepage' element={<LoginHomepage/>}></Route>
       <Route path='/About' element={<About/>}></Route>
-      <Route path='/Payment' element={<PaymentPage/>}></Route>
+      <Route path='/success' element={<PaymentSuccess/>}></Route>
+
+ 
       
   
       </Routes>

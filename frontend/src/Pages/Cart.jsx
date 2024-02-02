@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import StoreNavbar from "../Components/StoreNavbar";
 import { useMyContext } from "../Context";
 import { RiDeleteBin6Fill } from "react-icons/ri";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 
 function Cart() {
+  const navigate = useNavigate();
   const { cart, setCart } = useMyContext();
+  const [isPaymentSuccess, setPaymentSuccess] = useState(false);
 
   const calculateTotalQuantity = (productId) => {
     return cart.reduce(
@@ -43,6 +47,12 @@ function Cart() {
     setCart(updatedCart);
   };
 
+ const handleNavigate =()=>{
+  navigate('/success')
+  setCart([]);
+ }
+  
+
   return (
     <>
       <StoreNavbar />
@@ -52,20 +62,28 @@ function Cart() {
           <br />
           <br />
           {cart.length === 0 && (
-            
             <p className="text-4xl font-bold text-center">Your cart is empty !</p>
-        
-           
           )}
         </h1>
 
         {cart.length > 0 && (
           <>
             <div className=" flex flex-col items-center">
-            <h2 className="text-xl font-bold mb-2 text-center">Total Amount:</h2>
-            <p className="text-2xl font-bold text-center">{`Rs. ${calculateTotalAmount()}/-`}</p>
-            <Link to='/Payment'><button className="payment-btn">Proceed to Pay</button></Link>
+              <h2 className="text-xl font-bold mb-2 text-center">Total Amount:</h2>
+              <p className="text-2xl font-bold text-center">{`Rs. ${calculateTotalAmount()}/-`}</p>
+              <button className="payment-btn" onClick={handleNavigate}>Proceed to Pay</button>
             </div>
+
+            {/* Payment Success Modal */}
+            {isPaymentSuccess && (
+              <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex items-center justify-center">
+                <div className="bg-white p-8 rounded-md text-center">
+                  <h2 className="text-2xl font-bold mb-4">Payment Successful!</h2>
+                  <p className="text-lg">Thank you for your purchase.</p>
+                  <Link to="/Store" className="block mt-4 text-blue-500 underline">Continue Shopping</Link>
+                </div>
+              </div>
+            )}
 
             <div className="p-12 m-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[...new Set(cart.map((product) => product.id))].map((productId) => {
