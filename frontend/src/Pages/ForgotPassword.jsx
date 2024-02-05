@@ -13,14 +13,15 @@ function ForgotPassword() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    axios.post("http://localhost:8000/forgotpassword", { email: email }, { withCredentials: true })
+    axios.post("http://localhost:8000/forgotpassword", { email: email })
       .then(response => {
         console.log(response);
-        navigate("/Login");
+        // navigate("/Login");
+        alert("Reset Link Sent ! Check your Email")
       })
       .catch(error => {
         console.error("Axios error:", error);
-        // Handle errors, display an alert, etc.
+        
       });
   };
 
@@ -53,7 +54,7 @@ function ForgotPassword() {
         </div>
         <div className="btn flex flex-col items-center">
           <button className="p-2 m-2 bg-zinc-50 rounded-xl text-sm text-black hover:bg-zinc-400" onClick={handleSubmit}>
-            <b>SEND OTP</b>
+            <b>SEND RESET LINK</b>
           </button>
         </div>
       </div>

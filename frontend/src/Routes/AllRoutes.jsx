@@ -12,6 +12,7 @@ import ForgotPassword from '../Pages/ForgotPassword';
 import LoginHomepage from '../Pages/PostLogin/LoginHomepage';
 import About from '../Pages/About';
 import PaymentSuccess from '../Pages/PaymentSuccess';
+import ResetPassword from '../Pages/ResetPassword';
 
 function AllRoutes() {
     return (
@@ -29,6 +30,7 @@ function AllRoutes() {
       <Route path='/LoginHomepage' element={<LoginHomepage/>}></Route>
       <Route path='/About' element={<About/>}></Route>
       <Route path='/success' element={<PaymentSuccess/>}></Route>
+      <Route path='/resetpassword/:id/:token' element={<ResetPassword/>}></Route>
 
  
       

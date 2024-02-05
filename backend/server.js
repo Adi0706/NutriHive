@@ -80,9 +80,9 @@ app.post("/forgotpassword", (req, res) => {
 
       var mailOptions = {
         from: 'NutriHive@gmail.com',
-        to: 'adityab@gmail.com',
-        subject: 'Password Reset',
-        text: `Click on the following link to reset your password: http://yourfrontendurl/resetpassword?token=${token}`
+        to: 'adityab76@gmail.com',
+        subject: 'Password Reset Link',
+        text: `http://localhost:3000/resetpassword/${user.id}/${token}`
       };
 
       transporter.sendMail(mailOptions, function (error, info) {
@@ -100,6 +100,32 @@ app.post("/forgotpassword", (req, res) => {
       return res.status(500).json({ status: "Server Error" });
     });
 });
+
+
+app.post("/resetpassword/:id/:token", async (req, res) => {
+  const { id, token } = req.params;
+  const { password } = req.body;
+
+  try {
+    jwt.verify(token, "jwt_secret_key", async (err, decode) => {
+      if (err) {
+        res.json({ Status: "Error with token" });
+      } else {
+        try {
+          const hash = await bcrypt.hash(password, 10);
+          await UserSignUpModel.findByIdAndUpdate(id, { password: hash });
+          res.send({ Status: "Success" });
+        } catch (error) {
+          res.send({ Status: error });
+        }
+      }
+    });
+  } catch (error) {
+    console.error(error);
+    res.json({ Status: "Error with token" });
+  }
+});
+
 
 app.listen(PORT, () => {
   console.log(`Server is running on Port Number ${PORT}`);
