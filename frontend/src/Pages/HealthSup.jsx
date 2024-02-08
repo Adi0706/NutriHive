@@ -136,8 +136,8 @@ function HealthSup() {
               <img src={item.CardImage} alt='whey-image' className='w-48 h-52' />
               <p className='text-xl'>{item.CardPrice}</p>
               <div className='flex mt-4'>
-                <button className='card-button'>BUY NOW</button>
-                <button className='card-button ml-20' onClick={() => addtoCart(item)}>ADD TO CART </button>
+                
+                <button className='card-button ml-2' onClick={() => addtoCart(item)}>ADD TO CART </button>
               </div>
             </div>
           ))}

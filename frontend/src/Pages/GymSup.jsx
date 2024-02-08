@@ -144,9 +144,9 @@ function GymSup() {
                 <b>{item.CardPrice}</b>
               </p>
               <div className='flex mt-4'>
-                <button className='card-button'>BUY NOW</button>
+                
                 <button
-                  className='card-button ml-20'
+                  className='card-button ml-2'
                   onClick={() => addtoCart(item)}
                 >
                   ADD TO CART
